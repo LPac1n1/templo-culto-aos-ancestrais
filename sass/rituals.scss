@@ -1,0 +1,138 @@
+
+.rituals {
+  background-size: 100%;
+  background-color: $secondary-bg-color;
+  padding: 96px 0;
+  margin-bottom: 124px;
+
+  .rit-content {
+    margin: 56px 0;
+  }
+
+  .rit-text-content {
+    padding-bottom: 32px;
+  }
+
+  .cards-content {
+    @include flex(row, center, center, 72px);
+    position: relative;
+
+    .carousel {
+      list-style: none;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 100%;
+      gap: 32px;
+      overflow: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .phrase-card {
+      width: 100%;
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+      text-align: center;
+      background-color: rgb(49, 2, 2);
+      border-radius: 4px;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      background-color: $tertiary-bg-color;
+      border-radius: 4px;
+      padding: 8px;
+  
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+  
+      .card-text {
+        text-align: center;
+        padding:24px 16px 18px;
+  
+        .card-title {
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 36px;
+          margin-bottom: 16px;
+        }
+        .card-description {
+          @extend .sections-text;
+        }
+      }
+    }
+  }
+
+  .chevron {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    color: $primary-btn-color;
+    cursor: pointer;
+  }
+  #arrow-left {
+    left: 0;
+    bottom: 0;
+    transform: translateY(175%) translateX(175%);
+  }
+  #arrow-right {
+    right: 0;
+    bottom: 0;
+    transform: translateY(175%) translateX(-175%);
+  }
+}
+
+// Media Queries
+@media (min-width: 768px) {
+  .chevron {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  #arrow-left {
+    transform: translateY(150%) translateX(175%) !important;
+  }
+  #arrow-right {
+    transform: translateY(150%) translateX(-175%) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rit-text-content {
+    @include flex(row, center, center, 56px);
+  }
+
+  .cards-content {
+    padding: 0 124px;
+
+    .carousel {
+      grid-auto-columns: calc((100% / 2) - 22px) !important;
+    }
+  }
+
+  .chevron {
+    width: 56px !important;
+    height: 56px !important;
+  }
+  #arrow-left {
+    left: 0;
+    bottom: auto !important;
+    transform: none !important;
+  }
+  #arrow-right {
+    right: 0;
+    bottom: auto !important;
+    transform: none !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cards-content {
+    .carousel {
+      grid-auto-columns: calc((100% / 3) - 22px) !important;
+    }
+  }
+}

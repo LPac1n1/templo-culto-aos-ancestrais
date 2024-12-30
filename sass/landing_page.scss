@@ -1,0 +1,96 @@
+
+.landing-page {
+  background-image: url(../images/bg-content.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.lp-content {
+  @include flex(column, center, center, 0);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 92vh;
+
+  #lp-img-container {
+    position: absolute;
+    width: 564px;
+    text-align: center;
+    margin-top: 44px;
+    top: 1px;
+
+    #lp-img {
+      width: 100%;
+      opacity: 36%;
+    }
+  }
+  
+  #lp-text {
+    @include flex(column, center, center, 40px);
+    text-align: center;
+    z-index: 2;
+
+    #lp-title {
+      font-family: 'WindSong', sans-serif;
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 64px;
+      padding: 0 24px;
+      margin-bottom: 12px;
+    }
+    #lp-subtitle {
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 12px;
+      line-height: 24px;
+    }
+  }
+}
+
+// Media Queries
+@media (min-width: 768px) {
+  .lp-content {
+    #lp-img-container {
+      width: 696px;
+    }
+    
+    #lp-text {
+      #lp-title {
+        font-size: 72px;
+        margin-bottom: 24px;
+      }
+      #lp-subtitle {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing-page {
+    background-size: 100% 100%;
+    padding-top: 172px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .lp-content {
+    height: 86vh;
+
+    #lp-img-container {
+      width: 848px;
+    }
+    
+    #lp-text {
+      #lp-title {
+        font-size: 92px;
+        line-height: 96px;
+      }
+      #lp-subtitle {
+        font-size: 24px;
+        letter-spacing: 16px;
+      }
+    }
+  }
+}

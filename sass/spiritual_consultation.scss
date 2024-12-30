@@ -1,0 +1,120 @@
+.spiritual-consultation {
+  margin-bottom: 124px;
+}
+
+.sc-content {
+  margin: 72px 0;
+}
+
+.sc-consults-column {
+  @include flex(column, center, center, 48px);
+}
+
+.sc-consult-content {
+  @include flex(row, none, none, 24px);
+  max-width: 556px;
+
+  .consult-icon {
+    margin-top: 8px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: $primary-btn-color;
+    }
+  }
+
+  .consult-text {
+    #consult-title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+      margin-bottom: 24px;
+    }
+
+    #consult-description {
+      @extend .sections-text;
+    }
+  }
+}
+
+.sc-imgs {
+  @include flex(row, center, center, 0);
+  width: 100%;
+  margin: 144px 0;
+
+  img:first-child {
+    position: absolute;
+    width: 226px;
+  }
+  img:last-child {
+    position: relative;
+    width: 316px;
+    z-index: -1;
+  }
+}
+
+#sc-btn {
+  text-align: center;
+
+  button {
+    width: 100%;
+  }
+}
+
+// Media Queries
+@media (min-width: 768px) {
+  .sc-imgs {
+    margin: 172px 0;
+
+    img:first-child {
+      position: absolute;
+      width: 336px;
+      height: auto;
+    }
+    img:last-child {
+      position: relative;
+      width: 576px;
+      z-index: -1;
+    }
+  }
+
+  #sc-btn {
+    button {
+      width: 336px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .sc-content {
+    @include flex(row, center, center, 0);
+  }
+
+  .sc-imgs {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sc-imgs {
+    margin: 0;
+
+    img:first-child {
+      position: absolute;
+      width: 412px;
+      height: auto;
+    }
+    img:last-child {
+      position: relative;
+      width: 652px;
+      z-index: -1;
+    }
+  }
+
+  #sc-btn {
+    button {
+      width: 412px;
+    }
+  }
+}

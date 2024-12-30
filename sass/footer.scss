@@ -1,0 +1,52 @@
+
+footer {
+  background-color: $tertiary-bg-color;
+  padding: 72px 0;
+
+  nav {
+    margin-bottom: 72px;
+
+    ul {
+      @include flex (column, center, center, 48px);
+      list-style: none;
+
+      li {
+        opacity: 75%;
+      }
+    }
+  }
+
+  .logo-footer-container {
+    text-align: center;
+    margin-top: 72px;
+
+    img {
+      width: 128px;
+    }
+  }
+}
+
+// Medias Queries
+@media (min-width: 768px) {
+  footer {
+    #align-footer-content {
+      @include flex(row, space-around, center, 0)
+    }
+    .logo-footer-container {
+      margin-top: 0;
+    }
+
+    #hidden {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  footer {
+    .footer-content {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+  }
+}

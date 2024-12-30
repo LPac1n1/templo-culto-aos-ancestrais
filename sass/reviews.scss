@@ -1,0 +1,92 @@
+.reviews {
+  margin-bottom: 124px;
+}
+
+.rev-content {
+  @include flex(column, center, center, 0);
+  position: relative;
+  margin: 48px 0 180px;
+}
+
+.rev-text {
+  background-color: $quaternary-bg-color;
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.6);
+  max-width: 426px;
+  min-height: 532px;
+  padding: 36px;
+
+  .quotation-marks {
+    @include flex(row, center, center, 0);
+    margin-bottom: 16px;
+
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+    svg:last-child {
+      transform: rotate(180deg);
+    }
+  }
+
+  .rev-description {
+    @extend .sections-text;
+  }
+}
+
+.rev-person-info {
+  @include flex(column, none, center, 0);
+  position: absolute;
+  top: 472px;
+  gap: 16px;
+
+  .profile-pic {
+    img {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+    }
+  }
+
+  .stars {
+    @include flex(row, center, center, 0);
+    gap: 16px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: $primary-btn-color;
+    }
+  }
+
+  .person-name {
+    font-family: "Volkhov", sans-serif;
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+// Media Queries
+@media (min-width: 768px) {
+  .rev-text {
+    .quotation-marks {
+      svg {
+        width: 96px;
+        height: 96px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .revs-text-content {
+    @include flex(column, center, center, 0);
+    text-align: center;
+  }
+
+  .revs-content {
+    @include flex(row, center, center, 24px);
+    .rev-container {
+      display: block;
+    }
+  }
+}

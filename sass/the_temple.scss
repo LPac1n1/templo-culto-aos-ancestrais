@@ -1,0 +1,64 @@
+
+.the-temple {
+  margin-bottom: 124px;
+}
+
+.tt-content {
+  @include flex(column, space-between, center, 0);
+
+  .tt-text-content {
+    @include flex(column, center, center, 0);
+  }
+
+  .tt-moons {
+    text-align: center;
+    margin: 40px 0 48px;
+  } 
+  .tt-moons-bigger {
+    @extend .tt-moons;
+    width: 100%;
+    max-width: 720px;
+  }
+
+  #tt-img {
+      width: 252px;
+  }
+}
+
+// Media Queries
+@media (min-width: 768px) {
+  .tt-content {
+    .tt-moons {
+      display: none;
+    }
+    .tt-moons-bigger {
+      display: block;
+    }
+
+    #tt-img {
+      width: 292px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .the-temple {
+    margin-bottom: 48px;
+  }
+
+  .tt-content {
+    flex-direction: row;
+    gap: 64px;
+  }
+
+  .tt-text-content {
+    order: 2;
+  }
+  .tt-moons {
+    margin: 40px 0 0 0;
+  }
+
+  #tt-img {
+    width: 452px !important;
+  }
+}

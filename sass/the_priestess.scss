@@ -1,0 +1,68 @@
+
+.the-priestness {
+  margin-bottom: 124px;
+}
+
+.tp-info {
+  @include flex(column, center, center, 0);
+
+  #tp-text {
+    margin-bottom: 56px;
+
+    #tp-title {
+      font-size: 36px;
+    }
+    #tp-subtitle {
+      margin-left: 8px;
+    }
+  }
+
+  .tp-imgs {
+    @include flex(column, center, center, 0);
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+    img:first-child {
+      width: 252px;
+      margin-bottom: 248px;
+    }
+    img:last-child {
+      position: absolute;
+      width: 280px;
+    }
+  }
+}
+
+// Media Queries
+@media (min-width: 768px) {
+  .tp-info {
+    .tp-imgs {
+      img:first-child {
+        width: 300px !important;
+        margin-bottom: 296px;
+      }
+      img:last-child {
+        position: absolute;
+        width: 328px !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .tp-info {
+    @include flex(row, center, center, 64px);
+    .tp-imgs {
+      img:first-child {
+        width: 456px !important;
+        margin-bottom: 404px;
+      }
+      img:last-child {
+        position: absolute;
+        width: 484px !important;
+      }
+    }
+  }
+}

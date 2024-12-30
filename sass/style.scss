@@ -1,0 +1,295 @@
+// Page Colors
+@import "./colors.scss";
+
+// Page Formatting
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #181818 #070707;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: $primary-bg-color;
+  color: $primary-text-color;
+
+  a {
+    text-decoration: none;
+    color: white;
+    border: none;
+  }
+}
+
+.container {
+  max-width: 1440px;
+  height: auto;
+  margin: 0 48px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background: #181818;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1d1d1d;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+.fix-content {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+@media (min-width: 768px) {
+  * {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  * {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+}
+
+// Page Frequently Used Classes
+@import "./mixins.scss"; // Sass Mixins
+
+.sections-title {
+  font-family: "Volkhov", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.sections-subtitle {
+  font-family: "Volkhov", sans-serif;
+  font-weight: 400;
+  color: $tertiary-text-color;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.sections-text {
+  max-width: 1024px;
+  line-height: 36px;
+  opacity: 75%;
+}
+
+.btn {
+  background-color: $primary-btn-color;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 26px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #810707;
+}
+.see-more-btn {
+  @include flex(row, center, center, 8px);
+  background: none;
+  color: white;
+  border: solid 1px white;
+  padding: 12px 24px;
+  cursor: pointer;
+
+  p {
+    transition: 0.2s ease-in-out;
+  }
+
+  svg {
+    transition: 0.1s ease-in-out;
+    width: 16px;
+  }
+}
+.see-more-btn:hover {
+  border-color: #cccccc;
+
+  p {
+    color: #cccccc;
+  }
+
+  svg {
+    color: #cccccc;
+    margin-top: 2px;
+  }
+}
+
+.contact-lais {
+  @include flex(row, space-around, center, 12px);
+
+  svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  div {
+    p {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    span {
+      font-size: 10px;
+      opacity: 75%;
+    }
+  }
+}
+
+.social-media {
+  @include flex(column, center, center, 48px);
+  margin-top: 36px;
+
+  .social-icons {
+    @include flex(row, center, center, 36px);
+
+    svg {
+      width: 32px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+    svg:hover {
+      color: $primary-btn-color;
+    }
+  }
+}
+
+.circles-line {
+  @include flex(row, center, center, 32px);
+  margin-bottom: 32px;
+
+  .circle {
+    width: 12px;
+    height: 12px;
+    background-color: $primary-circle-color;
+    border-radius: 50%;
+  }
+
+  .bg-red {
+    background-color: $secondary-circle-color;
+  }
+}
+
+// Media Queries
+@media (min-width: 768px) {
+  .navbar {
+    ul {
+      @include flex(row, center, center, 48px);
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 24px 48px;
+    }
+  }
+
+  .sections-title {
+    font-size: 48px;
+    margin-bottom: 32px;
+  }
+
+  .contact-lais {
+    @include flex(row, center, center, 12px);
+
+    svg {
+      width: 36px !important;
+      height: 36px !important;
+    }
+
+    div {
+      p {
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      span {
+        font-size: 14px;
+        opacity: 75%;
+      }
+    }
+  }
+
+  .social-icons {
+    svg {
+      width: 36px !important;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    display: block;
+
+    ul {
+      justify-content: space-between;
+    }
+  }
+
+  .sections-title {
+    font-size: 56px;
+  }
+
+  .blank-space {
+    height: 112px;
+  }
+
+  .social-media {
+    @include flex(column, center, flex-start, 48px);
+  }
+}
+
+// Page Sections
+@import "./header.scss"; // Header
+@import "./navbar.scss"; // Navbar
+
+@import "./landing_page.scss"; // Landing Page
+@import "./the_temple.scss"; // "O Templo" Section
+@import "./the_priestess.scss"; // "A Sacerdotisa" Section
+@import "./rituals.scss"; // "Rituais" Section
+@import "./spiritual_consultation.scss"; // "Consulta Espiritual" Section
+@import "./courses.scss"; // "Cursos do Templo" Section
+@import "./reviews.scss"; // "O que os Clientes Dizem" Section
+@import "./shop.scss"; // "Loja" Section
+@import "./photos.scss"; // "Fotos" Section
+@import "./contact.scss"; // "Contato" Section
+
+@import "./footer.scss"; // Footer
+
+// Page Fonts
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Volkhov:wght@400;700&family=WindSong:wght@500&display=swap");
